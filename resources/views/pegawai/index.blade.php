@@ -93,12 +93,8 @@
 			<td>{{$pegawais->User->permision}}</td>
 			<td>{{$pegawais->jabatanModel->nama_jabatan}}</td>
 			<td>{{$pegawais->golonganModel->nama_golongan}}</td>
-			
-	<td><img src="asset/image/{{$pegawais->foto}}" height="80" width="80"></td>
-
-		<td><a href="{{route('pegawai.edit',$pegawais->id)}}"class="btn btn-warning">edit</a></td>	
-		</td>
-
+	       <td><img src="asset/image/{{$pegawais->foto}}" height="80" width="80"></td>
+		   <td><a href="{{route('pegawai.edit',$pegawais->id)}}"class="btn btn-warning">edit</a></td>	
 		<td>
 		{!!Form::open(['method'=>'DELETE','route'=>['pegawai.destroy',$pegawais->id]])!!}
 		

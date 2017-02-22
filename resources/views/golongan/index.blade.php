@@ -59,6 +59,7 @@
         </div>
     </div>
 </div>
+<body BGCOLOR ="#00FF00">
 <center><h1>Data golongan</h1></center>
 <hr>
 	<div class="col-md-9">
@@ -106,7 +107,7 @@
 
 	</tbody>
 </table>
-
+</body
 
 
 

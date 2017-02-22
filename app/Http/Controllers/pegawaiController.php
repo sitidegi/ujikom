@@ -129,10 +129,10 @@ class pegawaiController extends Controller
      */
     public function edit($id)
     {
-        $pegawais=pegawaiModel::find($id);
-        $jabatans=jabatanModel::all();
-        $golongans=golonganModel::all();
-        return view('pegawai.edit',compact('pegawais','jabatans','golongans'));
+        $pegawai=pegawaiModel::find($id);
+        $jabatan=jabatanModel::all();
+        $golongan=golonganModel::all();
+        return view('pegawai.edit',compact('pegawai','jabatan','golongan'));
     }
 
     /**

@@ -97,7 +97,7 @@ class kategori_lemburController extends Controller
         $jabatans=jabatanModel::all();
         $golongans=golonganModel::all();
         $kategori_lemburs=kategori_lemburModel::find($id);
-        return view('kategori_lembur.edit',compact('kategori_lembur'));
+        return view('kategori_lembur.edit',compact('kategori_lemburs','jabatans','golongans'));
     }
 
     /**

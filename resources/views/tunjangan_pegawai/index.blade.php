@@ -79,7 +79,7 @@
 		<th><center>Status</center></th>
 		<th><center>Jumalah anak</center></th>
 		<th><center>Besaran uang</center></th>
-		<th colspan="2">Action</th>
+		<th><center>Action</center></th>
 			
 		</tr>
 	</thead>
@@ -99,10 +99,6 @@
 			<td>{{$tunjangan_pegawais->tunjanganModel->status}}</td>
 			<td>{{$tunjangan_pegawais->tunjanganModel->jumlah_anak}}</td>
 			<td>{{$tunjangan_pegawais->tunjanganModel->besaran_uang}}</td>
- 
-		<td><a href="{{route('tunjangan_pegawai.edit',$tunjangan_pegawais->id)}}" class="btn btn-warning">Update</a></td>	
-		</td>
-
 		<td>
 		{!!Form::open(['method'=>'DELETE','route'=>['tunjangan_pegawai.destroy',$tunjangan_pegawais->id]])!!}
 		

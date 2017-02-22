@@ -63,7 +63,7 @@
 <center><h1>Data Jabatan</h1>
 	<table class="table table-striped table-bordered table-hover">
     <!-- <table class="table table-default"> -->
-		<table class="table table-hover table-striped ">
+
 			<tr class="danger">
 				<a href="{{url('/jabatan/create')}}"class="btn btn-primary form-control">Tambah Data</a><br><br>
 				{{$jabatan->links()}}
@@ -74,8 +74,7 @@
 		<th><center>kode jabatan</center></th>
 		<th><center>nama jabatan</center></th>
 		<th><center>besaran uang</center></th>
-		
-		<th colspan="3">Action</th>
+		<th colspan="2">Action</th>
 			
 		</tr>
 	</thead>

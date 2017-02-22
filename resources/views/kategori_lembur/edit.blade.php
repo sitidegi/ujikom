@@ -20,8 +20,8 @@
                     </div>
                      <div class="col-md-6 col-sm-6 col-xs-12">
                         <select class="form-control" col-md-7 col-sx-12 name="jabatan_id">
-                            @foreach ($jabatan as $jabatans)
-                            <option value="{{$jabatans->id}}">{{ $jabatans->nama_jabatan}}
+                            @foreach ($jabatans as $jabatans)
+                            <option value="{{$jabatans->id}}">{{ $kategori_lemburs->jabatanModel->nama_jabatan}}
                             </option>
                             @endforeach
 
@@ -30,8 +30,8 @@
                     </div>
                       <div class="col-md-6 col-sm-6 col-xs-12">
                         <select class="form-control" col-md-7 col-sx-12 name="golongan_id">
-                            @foreach ($golongan as $jabatans)
-                            <option value="{{$jabatans->id}}">{{ $jabatans->nama_golongan}}</option>
+                            @foreach ($golongans as $golongans)
+                            <option value="{{$jabatans->id}}">{{ $kategori_lemburs->golonganModel->nama_golongan}}</option>
                             @endforeach
                         </select>
                     </div>                    

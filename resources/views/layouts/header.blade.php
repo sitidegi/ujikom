@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<body bgcolor="">
+<nav class="pink accent-3" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/home" class="brand-logo">G A J I K A  R Y A W A N</a>
+     <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -93,3 +96,13 @@
     <script src="/js/app.js"></script>
 </body>
 </html>
+
+
+    </div>
+
+  </nav>
+  
+  <!-- Scripts -->
+    <script src="/js/app.js"></script>
+  </body>
+  </html>

@@ -4,11 +4,11 @@
         <div class="col-md-5 ">
                 <div class="panel-heading"><h2>Registrasi</div>
                 {!! Form
-                ::model($pegawais,['method' => 'PATCH' , 'route'=> ['pegawai.update',$pegawais->id], 'enctype'=>'multipart/form-data'] ) !!}
+                ::model($pegawai,['method' => 'PATCH' , 'route'=> ['pegawai.update',$pegawai->id], 'enctype'=>'multipart/form-data'] ) !!}
                 <div class="panel-body">
                             <div class="col-md-6">
                                 <label for="name" >Nama Pegawai</label>
-                                <input id="name" type="text" class="form-control" name="name" value="{{$pegawais->user->name}}" autofocus>
+                                <input id="name" type="text" class="form-control" name="name" value="{{$pegawai->User->name}}" autofocus>
 
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -17,7 +17,7 @@
 
                             <div class="col-md-6">
                                 <label for="email" >E-MAIL</label>
-                                <input id="email" type="email" class="form-control" name="email" value="{{$pegawais->user->email}}" autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{$pegawai->User->email}}" autofocus>
 
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -45,7 +45,7 @@
 
                             <div class="col-md-12">
                                 <label for="nip" >NIP Pegawai</label>
-                                <input id="nip" type="text" class="form-control" name="nip" value="{{$pegawais->nip}}" autofocus>
+                                <input id="nip" type="text" class="form-control" name="nip" value="{{$pegawai->nip}}" autofocus>
 
                                     <span class="help-block">
                                         <strong>{{ $errors->first('nip') }}</strong>
@@ -57,8 +57,8 @@
                             <div class="col-md-6">
                                 <label >Jabatan</label>
                                     <select class="col-md-6 form-control" name="jabatan_id">
-                                        @foreach($jabatans as $jabatans)
-                                            <option  value="{{$jabatans->id}}" >{{$jabatans->nama_jabatan}}</option>
+                                        @foreach($jabatan as $jabatans)
+                                            <option  value="{{$jabatans->id}}" >{{$pegawai->jabatanModel->nama_jabatan}}</option>
                                         @endforeach
                                     </select>
                             </div>
@@ -66,8 +66,8 @@
                             <div class="col-md-6">
                                 <label >Golongan</label>
                                     <select class="col-md-6 form-control" name="golongan_id">
-                                        @foreach($golongans as $golongans)
-                                            <option  value="{{$golongans->id}}" >{{$golongans->nama_golongan}}</option>
+                                        @foreach($golongan as $golongans)
+                                            <option  value="{{$golongans->id}}" >{{$pegawai->golonganModel->nama_golongan}}</option>
                                         @endforeach
                                     </select>
                             </div>

@@ -16,7 +16,7 @@ class CreateTablePenggajian extends Migration
         Schema::create('penggajian', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('tunjangan_pegawai_id')->unsigned();
-            $table->foreign('tunjangan_pegawai_id')->references('id')->on('tunjangan_pegawai')->OnDelete('CASCADE')->OnUpdate('CASCADE');
+            $table->foreign('tunjangan_pegawai_id')->references('id')->on('tunjangan_pegawai')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->integer('jumlah_jam_lembur');
             $table->integer('jumlah_uang_lembur');
             $table->integer('gaji_pokok');

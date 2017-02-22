@@ -17,11 +17,11 @@ class CreateTablePegawai extends Migration
             $table->increments('id');
             $table->string('nip')->unique();
             $table->integer('user_id')->unique()->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->OnDelete('CASCADE')->OnUpdate('CASCADE');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->integer('jabatan_id')->unsigned();
-            $table->foreign('jabatan_id')->references('id')->on('jabatan')->OnDelete('CASCADE')->OnUpdate('CASCADE');
+            $table->foreign('jabatan_id')->references('id')->on('jabatan')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->integer('golongan_id')->unsigned();
-            $table->foreign('golongan_id')->references('id')->on('golongan')->OnDelete('CASCADE')->OnUpdate('CASCADE');
+            $table->foreign('golongan_id')->references('id')->on('golongan')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->string('foto');
             $table->timestamps();
         });

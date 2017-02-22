@@ -17,7 +17,7 @@ class CreateTableLemburPegawai extends Migration
             $table->increments('id');
             $table->integer('kode_lembur_id')->unique();
             $table->integer('pegawai_id')->unsigned();
-            $table->foreign('pegawai_id')->references('id')->on('pegawai')->OnDelete('CASCADE')->OnUpdate('CASCADE');
+            $table->foreign('pegawai_id')->references('id')->on('pegawai')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->integer('jumlah_jam');
             $table->timestamps();
         });

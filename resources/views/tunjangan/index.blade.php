@@ -75,11 +75,9 @@
 		<th><center>jabatan </center></th>
 		<th><center>golongan </center></th>
 		<th><center>status</center></th>
-		<th>jumlah anak</th>
-		<th>besaran uang</th>
-		<th colspan="3">Action</th>
-	</th>
-			
+		<th><center>jumlah anak</center></th>
+		<th><center>besaran uang</center></th>
+		<th colspan="1">Action</th>		
 		</tr>
 	</thead>
 	<tbody>
@@ -95,10 +93,6 @@
 			<td>{{$tunjangans->status}}</td>
 			<td>{{$tunjangans->jumlah_anak}}</td>
 			<td>{{$tunjangans->besaran_uang}}</td>
-
-
-		<td><a href="{{route('tunjangan.edit',$tunjangans->id)}}"class="btn btn-warning">edit</a></td>	
-		</td>
 		<td>
 		{!!Form::open(['method'=>'DELETE','route'=>['tunjangan.destroy',$tunjangans->id]])!!}
 		

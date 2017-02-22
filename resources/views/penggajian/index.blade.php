@@ -101,7 +101,7 @@
                         </h5>
                         
                                 <td><a class="btn btn-primary form-control" href="{{route('penggajian.show',$penggajians->id)}}">Detail</a></td>
-                                <td><a class="btn btn-success form-control" href="{{route('penggajian.show',$penggajians->id)}}">Edit </a></td>
+                          
                                      <td>{!!Form::open(['method'=>'DELETE','route'=>['penggajian.destroy',$penggajians->id]])!!}
                                     {!!Form::submit('Delete',['class'=>'btn btn-danger col-md-12'])!!}</td>
                                     {!!Form::close()!!}
