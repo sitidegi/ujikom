@@ -23,8 +23,8 @@ class PenggajianController extends Controller
      */
     public function index()
     {
-        $penggajians=penggajianModel::paginate(3);
-        return view('penggajian.index',compact('penggajians'));
+        $penggajian=penggajianModel::paginate(3);
+        return view('penggajian.index',compact('penggajian'));
     }
 
     /**
@@ -65,7 +65,7 @@ class PenggajianController extends Controller
         $wheregolongan=golonganModel::where('id',$wherepegawai->golongan_id)->first();
         // dd($wheregolongan);
 
-        $penggajian=new penggajianModel ;
+        $penggajians=new penggajianModel ;
         if (isset($wherepenggajian)) {
             $error=true ;
             $tunjangans=tunjangan_pegawaiModel::paginate(10);
@@ -73,38 +73,39 @@ class PenggajianController extends Controller
         }
         elseif (!isset($wherelemburpegawai)) {
             $nol=0 ;
-            $penggajian->jumlah_jam_lembur=$nol;
+            $penggajians->jumlah_jam_lembur=$nol;
             $penggajian->jumlah_uang_lembur=$nol ;
-            $penggajian->gaji_pokok=$wherejabatan->besaran_uang+$wheregolongan->besaran_uang;
-            $penggajian->total_gaji=($wheretunjangan->besaran_uang)+($wherejabatan->besaran_uang+$wheregolongan->besaran_uang);
-                $penggajian->status_pengambilan=0 ;
-            $penggajian->tanggal_pengambilan =date('d-m-y');
-        $penggajian->tunjangan_pegawai_id=Input::get('tunjangan_pegawai_id');
-        $penggajian->petugas_penerimaan=auth::User()->name ;
-        $penggajian->save();
+
+            $penggajians->gaji_pokok=$wherejabatan->besaran_uang+$wheregolongan->besaran_uang;
+            $penggajians->total_gaji=($wheretunjangan->besaran_uang)+($wherejabatan->besaran_uang+$wheregolongan->besaran_uang);
+                $penggajians->status_pengambilan=0 ;
+            $penggajians->tanggal_pengambilan =date('d-m-y');
+        $penggajians->tunjangan_pegawai_id=Input::get('tunjangan_pegawai_id');
+        $penggajians->petugas_penerimaan=auth::User()->name ;
+        $penggajians->save();
         }
-        elseif (!isset($wherelemburpegawai)||!isset($wherekategorilembur)) {
+        elseif (!isset($wherelemburpegawai)||!isset($wherekategori_lembur)) {
             $nol=0 ;
-            $penggajian->jumlah_jam_lembur=$nol;
-            $penggajian->jumlah_uang_lembur=$nol ;
-            $penggajian->gaji_pokok=$wherejabatan->besaran_uang+$wheregolongan->besaran_uang;
-            $penggajian->total_gaji=($wheretunjangan->besaran_uang)+($wherejabatan->besaran_uang+$wheregolongan->besaran_uang);
-            $penggajian->status_pengambilan=0 ;
-            $penggajian->tanggal_pengambilan =date('d-m-y');
-        $penggajian->tunjangan_pegawai_id=Input::get('tunjangan_pegawai_id');
-        $penggajian->petugas_penerimaan=auth::user()->name ;
-        $penggajian->save();
+            $penggajians->jumlah_jam_lembur=$nol;
+            $penggajians->jumlah_uang_lembur=$nol ;
+            $penggajians->gaji_pokok=$wherejabatan->besaran_uang+$wheregolongan->besaran_uang;
+            $penggajians->total_gaji=($wheretunjangan->besaran_uang)+($wherejabatan->besaran_uang+$wheregolongan->besaran_uang);
+            $penggajians->status_pengambilan=0 ;
+            $penggajians->tanggal_pengambilan =date('d-m-y');
+        $penggajians->tunjangan_pegawai_id=Input::get('tunjangan_pegawai_id');
+        $penggajians->petugas_penerimaan=auth::user()->name ;
+        $penggajians->save();
         }
         else{
 
-            $penggajian->jumlah_jam_lembur=$wherelemburpegawai->jumlah_jam;
-            $penggajian->jumlah_uang_lembur=$wherelemburpegawai->jumlah_jam*$wherekategorilembur->besaran_uang ;
-            $penggajian->gaji_pokok=$wherejabatan->besaran_uang+$wheregolongan->besaran_uang;
-            $penggajian->total_gaji=($wherelemburpegawai->jumlah_jam*$wherekategorilembur->besaran_uang)+($wheretunjangan->besaran_uang)+($wherejabatan->besaran_uang+$wheregolongan->besaran_uang);
-            $penggajian->tanggal_pengambilan =date('d-m-y');
-            $penggajian->id_tunjangan_pegawai=Input::get('id_tunjangan_pegawai');
-            $penggajian->status_pengambilan=0 ;
-            $penggajian->petugas_penerimaan=auth::user()->name ;
+            $penggajians->jumlah_jam_lembur=$wherelemburpegawai->jumlah_jam;
+            $penggajians->jumlah_uang_lembur=$wherelemburpegawai->jumlah_jam*$wherekategori_lembur->besaran_uang ;
+            $penggajians->gaji_pokok=$wherejabatan->besaran_uang+$wheregolongan->besaran_uang;
+            $penggajians->total_gaji=($wherelemburpegawai->jumlah_jam*$wherekategori_lembur->besaran_uang)+($wheretunjangan->besaran_uang)+($wherejabatan->besaran_uang+$wheregolongan->besaran_uang);
+            $penggajians->tanggal_pengambilan =date('d-m-y');
+            $penggajians->tunjangan_pegawai_id=Input::get('tunjangan_pegawai_id');
+            $penggajians->status_pengambilan=0 ;
+            $penggajians->petugas_penerimaan=auth::user()->name ;
             $penggajian->save();
             }
             return redirect('penggajian');

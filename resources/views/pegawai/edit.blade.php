@@ -8,7 +8,7 @@
                 <div class="panel-body">
                             <div class="col-md-6">
                                 <label for="name" >Nama Pegawai</label>
-                                <input id="name" type="text" class="form-control" name="name" value="{{$pegawai->User->name}}" autofocus>
+                                <input id="name" type="text" class="form-control" name="name" value="{{$pegawai->user->name}}" autofocus>
 
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -17,11 +17,9 @@
 
                             <div class="col-md-6">
                                 <label for="email" >E-MAIL</label>
-                                <input id="email" type="email" class="form-control" name="email" value="{{$pegawai->User->email}}" autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{$pegawai->user->email}}" autofocus>
 
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                    
                             </div>
 
                              <div class="col-md-12">
@@ -75,7 +73,7 @@
                             <div class="col-md-12">
                                 <label >Foto Pegawai</label>
                                     <input type="file" class="form-control" name="foto" autofocus>
-
+                                <td><img src="asset/image/{{$pegawai->foto}}" height="80" width="80"></td>
                                     @if ($errors->has('foto'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('foto') }}</strong>

@@ -1,5 +1,7 @@
-@extends('layouts/app')
+
+@extends('layouts/index2')
 @section('content')
+
 <div class="col-md-3 ">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -59,8 +61,9 @@
         </div>
     </div>
 </div>
-<body BGCOLOR ="#00FF00">
+
 <center><h1>Data golongan</h1></center>
+
 <hr>
 	<div class="col-md-9">
 		<table class="table table-striped table-bordered table-hover">

@@ -88,12 +88,10 @@
                         <h4>{{$penggajians->tunjangan_pegawaiModel->pegawaiModel->nip}}</h4>
                         <b>@if($penggajians->tanggal_pengambilan == ""&&$penggajians->status_pengambilan == "0")
                             Gaji Belum Diambil
-                        @elseif($penggajians->tanggal_pengambilan == ""||$penggajians->status_pengambilan == "0")
-                            Gaji Belum Diambil
                         @else
                             Gaji Sudah Diambil Pada {{$penggajians->tanggal_pengambilan}}
                         @endif</b>
-                        <h5>Gaji Lembur Sebesar Rp.{{$penggajians->jumlah_uang_lembur}} ,Gaji Pokok Sebesar Rp.{{$penggajians->gaji_pokok}} ,Mendapat Tunjangan Sebesar Rp.{{$penggajians->tunjangan_pegawaiModel->tunjanganModel->besaran_uang}} ,Jadi Total Gaji Rp.{{$penggajians->total_gaji}}
+                        <h5>Gaji Lembur  Rp.{{$penggajians->jumlah_uang_lembur}} ,Gaji Pokok  Rp.{{$penggajians->gaji_pokok}} ,Mendapatkan Tunjangan Sebesar Rp.{{$penggajians->tunjangan_pegawaiModel->tunjanganModel->besaran_uang}} ,Jadi Total Gaji Rp.{{$penggajians->total_gaji}}
 
 
 

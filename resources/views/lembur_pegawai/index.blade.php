@@ -1,5 +1,5 @@
 
-@extends('layouts/app')
+@extends('layouts/index')
 @section('content')
 <div class="col-md-3 ">
     <div class="panel panel-default">
